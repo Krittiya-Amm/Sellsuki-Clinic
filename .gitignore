@@ -4,5 +4,7 @@ dist/
 .vinext/
 .vite/
 .wrangler/
+.vercel/
+.output/
 .openai/
 .DS_Store
