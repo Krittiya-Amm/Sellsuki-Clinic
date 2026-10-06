@@ -51,13 +51,25 @@ export default function CustomerJourney() {
     <ol className="journey-steps" ref={rail}>
       {stages.map((s, i) => (
         <li key={s.n} className={`journey-step${shown[i] ? ' is-in' : ''}${active === i ? ' is-active' : ''}`}>
-          <div className="journey-step-head">
-            <span className="journey-circle"><img src={s.img} alt={s.alt} width={200} height={200} loading="lazy" /></span>
+          <div className="journey-art">
+            <img src={s.img} alt={s.alt} width={1536} height={1024} loading="lazy" />
             <span className="journey-step-no" aria-hidden="true">{s.n}</span>
           </div>
           <span className="journey-services">{s.services.split(' · ').map(w => <em key={w}>{w}</em>)}</span>
           <h3>{s.title}</h3>
           <p>{s.desc}</p>
+          {s.n === '04' && (
+            <div className="journey-line">
+              <button type="button" className="journey-line-hint" aria-describedby="journey-line-pop">ตัวอย่างข้อความผ่าน LINE</button>
+              <div className="journey-line-preview" id="journey-line-pop" role="tooltip">
+                <div>
+                  <strong>แจ้งเตือนนัดหมาย 💚</strong>
+                  <p>พรุ่งนี้ เวลา 14.00 น.<br />คุณมีนัดปรึกษาที่คลินิกค่ะ</p>
+                  <span className="journey-line-actions"><span>ยืนยันนัด</span><span>ขอเลื่อนนัด</span></span>
+                </div>
+              </div>
+            </div>
+          )}
         </li>
       ))}
     </ol>

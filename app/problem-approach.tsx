@@ -134,8 +134,8 @@ export default function ProblemApproach() {
     <div className="pa-list" ref={list}>
       {rows.map((r, i) => (
         <article key={r.n} className={`pa-row${i === 1 ? ' is-flipped' : ''}${shown[i] ? ' is-in' : ''}`}>
-          <span className="pa-num" aria-hidden="true">{r.n}</span>
           <div className="pa-copy">
+            <span className="pa-num" aria-hidden="true">{r.n}</span>
             <span className="pa-problem">{r.problem}</span>
             <h3>{r.headline}</h3>
             <span className="pa-label"><r.Icon aria-hidden="true" />{r.label}</span>
